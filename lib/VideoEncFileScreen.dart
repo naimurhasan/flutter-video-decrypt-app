@@ -4,7 +4,7 @@ import 'package:video_player/video_player.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:convert';
-import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 import 'dart:typed_data';
 import 'package:encrypt/encrypt.dart' as Enc;
 
@@ -28,7 +28,13 @@ class _VideoEncFileScreenState extends State<VideoEncFileScreen> {
 
     final encrypted = Enc.Encrypted(
         Uint8List.fromList(base64Decode(await protected_file.readAsString())));
-    File decFile = File('/storage/emulated/0/Android/protected_video.mp4');
+
+    // Temp Path
+    Directory tempDir = await getTemporaryDirectory();
+    String filePath = '${tempDir.path}/protected_video.mp4';
+
+    File decFile = File(filePath);
+
     await decFile.writeAsBytes(encrypter.decryptBytes(encrypted));
 
     _controller = VideoPlayerController.file(decFile)
