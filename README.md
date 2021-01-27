@@ -1,10 +1,9 @@
 # video_decyrptor
 
-A new Flutter application.
+<img src="https://github.com/naimurhasan/flutter-video-decrypt-app/blob/main/screenshot.png?raw=true" width="600">
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
