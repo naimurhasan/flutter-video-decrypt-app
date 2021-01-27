@@ -38,6 +38,7 @@ dev_dependencies:
   flutter_file_manager: ^0.2.0
   video_player: ^1.0.1
   encrypt: ^4.1.0
+  permission_handler: ^5.0.1+1
 
 
 # For information on the generic Dart part of this file, see the
